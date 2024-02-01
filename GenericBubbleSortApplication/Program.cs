@@ -4,7 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        object[] arr = new object[] { 2, 1, 4, 3 };
+        //object[] arr = new object[] { 2, 1, 4, 3 };
+        string[] arr = new string[] { "Bob", "Henry", "Andy", "Greg" };
 
         SortArray sortArray = new SortArray();
 
