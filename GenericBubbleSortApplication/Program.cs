@@ -1,11 +1,18 @@
-﻿namespace GenericBubbleSortApplication;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace GenericBubbleSortApplication;
 
 class Program
 {
     static void Main(string[] args)
     {
         //object[] arr = new object[] { 2, 1, 4, 3 };
-        string[] arr = new string[] { "Bob", "Henry", "Andy", "Greg" };
+        //string[] arr = new string[] { "Bob", "Henry", "Andy", "Greg" };
+
+        Employee[] arr = new Employee[] { new Employee { Id = 4, Name = "John" },
+                                               new Employee { Id = 2, Name = "Bob" },
+                                               new Employee { Id = 3, Name = "Greg" },
+                                               new Employee { Id = 1, Name = "Tom" }};
 
         SortArray sortArray = new SortArray();
 
@@ -19,6 +26,30 @@ class Program
         Console.ReadKey();
     }
 }
+
+public class Employee : IComparable
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    //public int CompareTo([AllowNull] Employee other)
+    //{
+    //    return this.Name.CompareTo(other.Name);
+    //}
+
+
+
+     public int CompareTo(object obj)
+    {
+        return this.Id.CompareTo(((Employee)obj).Id);
+    }
+
+    public override string ToString()
+    {
+        return $"{Id} {Name}";
+    }
+}
+
 
 public class SortArray
 {
