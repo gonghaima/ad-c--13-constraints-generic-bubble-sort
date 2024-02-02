@@ -14,7 +14,7 @@ class Program
                                                new Employee { Id = 3, Name = "Greg" },
                                                new Employee { Id = 1, Name = "Tom" }};
 
-        SortArray sortArray = new SortArray();
+        SortArray<Employee> sortArray = new SortArray<Employee>();
 
         sortArray.BubbleSort(arr);
 
@@ -51,9 +51,9 @@ public class Employee : IComparable
 }
 
 
-public class SortArray
+public class SortArray<T>
 {
-    public void BubbleSort(object[] arr)
+    public void BubbleSort(T[] arr)
     {
         int n = arr.Length;
 
@@ -69,9 +69,9 @@ public class SortArray
         }
     }
 
-    private void Swap(object[] arr, int j)
+    private void Swap(T[] arr, int j)
     {
-        object temp = arr[j];
+        T temp = arr[j];
         arr[j] = arr[j + 1];
         arr[j + 1] = temp;
     }
