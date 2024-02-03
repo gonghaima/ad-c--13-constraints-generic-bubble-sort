@@ -51,7 +51,7 @@ public class Employee : IComparable
 }
 
 
-public class SortArray<T>
+public class SortArray<T> where T:IComparable
 {
     public void BubbleSort(T[] arr)
     {
@@ -61,7 +61,7 @@ public class SortArray<T>
         {
             for (int j = 0; j < n - i -1; j++)
             {
-                if (((IComparable)arr[j]).CompareTo(arr[j+1])>0)
+                if ((arr[j]).CompareTo(arr[j+1])>0)
                 {
                     Swap(arr, j);
                 }
