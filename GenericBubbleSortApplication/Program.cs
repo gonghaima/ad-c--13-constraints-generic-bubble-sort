@@ -6,15 +6,18 @@ class Program
 {
     static void Main(string[] args)
     {
+        string[] arr = new string[] { "Bob", "Henry", "Andy", "Greg" };
+        //int[] arr = new int[] { 2, 1, 4, 3 };
         //object[] arr = new object[] { 2, 1, 4, 3 };
-        //string[] arr = new string[] { "Bob", "Henry", "Andy", "Greg" };
 
-        Employee[] arr = new Employee[] { new Employee { Id = 4, Name = "John" },
-                                               new Employee { Id = 2, Name = "Bob" },
-                                               new Employee { Id = 3, Name = "Greg" },
-                                               new Employee { Id = 1, Name = "Tom" }};
+        //Employee[] arr = new Employee[] { new Employee { Id = 4, Name = "John" },
+        //                                       new Employee { Id = 2, Name = "Bob" },
+        //                                       new Employee { Id = 3, Name = "Greg" },
+        //                                       new Employee { Id = 1, Name = "Tom" }};
 
-        SortArray<Employee> sortArray = new SortArray<Employee>();
+        SortArray<string> sortArray = new SortArray<string>();
+        //SortArray<int> sortArray = new SortArray<int>();
+        //SortArray<Employee> sortArray = new SortArray<Employee>();
 
         sortArray.BubbleSort(arr);
 
